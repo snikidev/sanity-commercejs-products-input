@@ -1,11 +1,12 @@
-# Sanity Blogging Content Studio
+# Custom Commerce.js input field for Sanity.io
 
-Congratulations, you have now installed the Sanity Content Studio, an open source real-time content editing environment connected to the Sanity backend.
+Feel free to fork it or copy it to create your own better and more functional fields. 🙌
 
-Now you can do the following things:
+## Launch
 
-- [Read “getting started” in the docs](https://www.sanity.io/docs/introduction/getting-started?utm_source=readme)
-- Check out the example frontend: [React/Next.js](https://github.com/sanity-io/tutorial-sanity-blog-react-next)
-- [Read the blog post about this template](https://www.sanity.io/blog/build-your-own-blog-with-sanity-and-next-js?utm_source=readme)
-- [Join the community Slack](https://slack.sanity.io/?utm_source=readme)
-- [Extend and build plugins](https://www.sanity.io/docs/content-studio/extending?utm_source=readme)
+```
+yarn
+yarn start
+```
+
+*NOTE: current repo is using Commerce.js demo `pk` to fetch the products*
