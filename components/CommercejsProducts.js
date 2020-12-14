@@ -17,22 +17,17 @@ const CommercejsProducts = ({ type, value, markers, level, onChange }) => {
   const { title, description } = type;
 
   const loadOptions = debounce(async (inputValue, callback) => {
-    const { data } = await commerce.products.list();
+    const { data } = inputValue
+      ? await commerce.products.list({ query: inputValue })
+      : await commerce.products.list();
 
-    if (!!data.length) {
-      const products = data.map((product) => ({
-        ...product,
-        label: product.name,
-        value: product.id,
-      }));
+    const products = data.map((product) => ({
+      ...product,
+      label: product.name,
+      value: product.id,
+    }));
 
-      if (inputValue) {
-        const filteredProducts = products.filter(
-          (product) => product.name.toLowerCase() === inputValue.toLowerCase()
-        );
-        callback(filteredProducts);
-      } else callback(products);
-    }
+    callback(products);
   }, 500);
 
   const handleChange = (values) => {
